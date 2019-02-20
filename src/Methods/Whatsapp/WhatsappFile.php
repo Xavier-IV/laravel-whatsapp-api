@@ -13,14 +13,19 @@ use XavierIV\LaravelWhatsappApi\Whatsapp;
 
 class WhatsappFile extends Whatsapp
 {
-    public function file($file, $fileName, $caption = '')
+    public function file($file, $fileName)
     {
         $this->file = $fileName;
         $this->body = $file;
-        $this->caption = $caption;
 
         $this->intention = 'sendFile';
-        return parent::callback();
+        return $this;
+    }
+
+    public function caption($caption = '')
+    {
+        $this->caption = $caption;
+        return $this;
     }
 
 }

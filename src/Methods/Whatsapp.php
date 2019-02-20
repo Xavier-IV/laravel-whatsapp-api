@@ -10,7 +10,8 @@ namespace XavierIV\LaravelWhatsappApi;
 
 class Whatsapp implements Notification
 {
-    protected $recepient;
+    protected $recipient;
+    protected $recipients;
     protected $fields;
     protected $endpoint;
     protected $intention;
@@ -19,32 +20,39 @@ class Whatsapp implements Notification
 
     protected $file;
 
-    public function to($recepient)
+    public function to($recipient)
     {
-        $this->recepient = $recepient;
+        $this->recipient = $recipient;
         return $this;
     }
 
-    public function forMessage()
+    public function toMany($recipients)
     {
-        return new WhatsappMessage();
-    }
-
-    public function forFile()
-    {
-        return new WhatsappFile();
+        $this->recipients = $recipients;
     }
 
     public function send()
     {
+        if($this->recipient){
+            $this->sendSingle();
+        }
+
+        if ($this->recipients) {
+            foreach($this->recipients as $recipient)
+            {
+                $this->sendSingle($recipient);
+            }
+        }
+    }
+
+    private function sendSingle($recipient = '')
+    {
         $this->fields = [
             'body' => $this->body,
             'filename' => $this->file,
-            'phone' => $this->recepient,
+            'phone' => $recipient ?? $this->recipient,
             'caption' => $this->caption,
         ];
-
-
 
         $this->fields = json_encode($this->fields);
         $this->endpoint =  env('CHAT_API_URL') . $this->intention . '?token=' . env('CHAT_API_TOKEN');
@@ -64,11 +72,6 @@ class Whatsapp implements Notification
             $response = curl_exec($chatch);
             curl_close($chatch);
         }
-    }
-
-    public function callback()
-    {
-        return $this;
     }
 
 

@@ -12,7 +12,7 @@ namespace XavierIV\LaravelWhatsappApi;
 interface Notification
 {
 
-    public function to($recepient);
+    public function to($recipient);
 
     public function send();
 
