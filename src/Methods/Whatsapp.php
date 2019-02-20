@@ -6,12 +6,7 @@
  * Time: 11:32 AM
  */
 
-namespace App\Libraries\LaravelWhatsappApi\Methods;
-
-
-use App\Libraries\LaravelWhatsappApi\Methods\Whatsapp\WhatsappFile;
-use App\Libraries\LaravelWhatsappApi\Methods\Whatsapp\WhatsappMessage;
-use App\Libraries\LaravelWhatsappApi\Notification;
+namespace XavierIV\LaravelWhatsappApi;
 
 class Whatsapp implements Notification
 {

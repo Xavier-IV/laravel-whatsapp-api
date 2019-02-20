@@ -6,7 +6,7 @@
  * Time: 10:21 AM
  */
 
-namespace App\Libraries\LaravelWhatsappApi;
+namespace XavierIV\LaravelWhatsappApi;
 
 
 interface Notification

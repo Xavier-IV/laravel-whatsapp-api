@@ -6,10 +6,10 @@
  * Time: 4:25 PM
  */
 
-namespace App\Libraries\LaravelWhatsappApi\Methods\Whatsapp;
+namespace XavierIV\LaravelWhatsappApi\Whatsapp;
 
 
-use App\Libraries\LaravelWhatsappApi\Methods\Whatsapp;
+use XavierIV\LaravelWhatsappApi\Whatsapp;
 
 class WhatsappFile extends Whatsapp
 {

@@ -6,9 +6,9 @@
  * Time: 4:23 PM
  */
 
-namespace App\Libraries\LaravelWhatsappApi\Methods\Whatsapp;
+namespace XavierIV\LaravelWhatsappApi\Whatsapp;
 
-use App\Libraries\LaravelWhatsappApi\Methods\Whatsapp;
+use XavierIV\LaravelWhatsappApi\Whatsapp;
 
 class WhatsappMessage extends Whatsapp
 {
