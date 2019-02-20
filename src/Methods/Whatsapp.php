@@ -29,6 +29,7 @@ class Whatsapp implements Notification
     public function toMany($recipients)
     {
         $this->recipients = $recipients;
+        return $this;
     }
 
     public function send()
