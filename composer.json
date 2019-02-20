@@ -9,7 +9,6 @@
             "email": "mohd.zafranudin@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {},
     "autoload": {
         "psr-0": {
