@@ -1,0 +1,14 @@
+{
+    "name": "xavier-iv/laravel-whatsapp-api",
+    "description": "A tool that integrates Chat API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamad Zafranudin",
+            "email": "mohd.zafranudin@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
